@@ -38,10 +38,6 @@ void draw() {
 //frameRate(60);
   if (posCharge == 2){
     bolt();
-    if (posCharge>= 3){
-       bolt();
-      
-    }
    
   }
   if (endY > (500 - offset )) {
