@@ -9,7 +9,9 @@ int opacity = 500;
 float colorR1 = (float) Math.random() * 256;
 float colorR2 = (float) Math.random() * 256;
 float colorR3 = (float) Math.random() * 256;
-boolean polaris = false;
+float strokeW =(float) Math.random() * 10 +10;
+
+
 void setup() {
   size(500,500);
   background(50);
@@ -26,7 +28,9 @@ void setup() {
 void draw() {
   frameRate(30);
   clouds();
-  strokeWeight(5);
+  strokeWeight(strokeW);
+  strokeW -=(strokeW/50);
+  
   //fill((float)Math.random() * 256, (float) Math.random() * 256, (float) Math.random() * 256);
   stroke(colorR1, colorR2, colorR3);
   //startX = (int)((Math.random() * 251) + 125);
@@ -50,7 +54,7 @@ void draw() {
     drawImpact();
     clouds();
     noLoop();
-    polaris = true;
+   
     //issue: lightning bolt no resetting though reset function working fine
   }
   
@@ -61,6 +65,7 @@ void draw() {
 }
 
 void reset(){
+  strokeW =(float) Math.random() * 10 +10;
   colorR1 = (float) Math.random() * 256;
   colorR2 = (float) Math.random() * 256;
   colorR3 = (float) Math.random() * 256;
