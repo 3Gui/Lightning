@@ -36,18 +36,12 @@ void draw() {
   //startX = (int)((Math.random() * 251) + 125);
   //endX = startX;
 //frameRate(60);
-  if (posCharge >= 2){
-    endX += ( Math.random() * 30 - 15);
-    endY += (Math.random() * 15);
-    if (keyCode == RIGHT){
-    endX += 10;  
-  }
-  if (keyCode == LEFT){
-    endX -= 10;  
-  }
-    line(startX, startY, endX, endY);
-    startX = endX;
-    startY = endY;
+  if (posCharge == 2){
+    bolt();
+    if (posCharge>= 3){
+       bolt();
+      
+    }
    
   }
   if (endY > (500 - offset )) {
@@ -81,6 +75,21 @@ void reset(){
   startY = 100;
   endY = 100;
   loop();
+  
+}
+
+void bolt(){
+  endX += ( Math.random() * 30 - 15);
+    endY += (Math.random() * 15);
+    if (keyCode == RIGHT){
+    endX += 10;  
+  }
+  if (keyCode == LEFT){
+    endX -= 10;  
+  }
+    line(startX, startY, endX, endY);
+    startX = endX;
+    startY = endY;
   
 }
 void mousePressed() {
