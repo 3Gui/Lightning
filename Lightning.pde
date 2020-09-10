@@ -36,7 +36,7 @@ void draw() {
   //startX = (int)((Math.random() * 251) + 125);
   //endX = startX;
 //frameRate(60);
-  if (posCharge == 2){
+  if (posCharge >= 2){
     bolt();
    
   }
